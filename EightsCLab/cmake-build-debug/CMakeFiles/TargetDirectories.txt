@@ -1,0 +1,3 @@
+C:/Users/Иван/CLionProjects/EightsCLab/cmake-build-debug/CMakeFiles/EightsCLab.dir
+C:/Users/Иван/CLionProjects/EightsCLab/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Иван/CLionProjects/EightsCLab/cmake-build-debug/CMakeFiles/rebuild_cache.dir
