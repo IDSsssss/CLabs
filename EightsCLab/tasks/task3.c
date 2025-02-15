@@ -3,19 +3,14 @@
 быть).*/
 
 #include "../binaryFiles/binaryFiles.h"
-#include "../inputManager/getInt.h"
-#include "../memoryAllocation/memoryAllocation.h"
 #include "../sorting/sorting.h"
 
 
 void task3()
 {
-	char* file_name = enterFileName();
-	printf("The name of your file is %s.\n\n", file_name);
+	FILE* my_file = openFile("r+b");
 
-	FILE* my_file = openFile(file_name, "r+b");
-
-	puts("The numbers in the file are:");
+	puts("The numbers in your file are:");
 	printFile(my_file);
 
 	sortFile(my_file);

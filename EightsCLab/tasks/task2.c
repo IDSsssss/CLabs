@@ -5,22 +5,16 @@
 #include "../binaryFiles/binaryFiles.h"
 #include "../sorting/sorting.h"
 
-#include <time.h>
-#include <stdlib.h>
-
 
 int calculateUniqueNumbersCount(FILE* file)
 {
 	const int subsequence_length = calculateFileLength(file);
-	fseek(file, 0, SEEK_SET);
 
-	int current_number = 0, previous_number = 0, unique_numbers_count = 1;
+	int current_number = 0, previous_number = getNumber(file, 0), unique_numbers_count = 1;
 
-	fread(&previous_number, sizeof(int), 1, file);
-
-	for (int i = 1; i <= subsequence_length; ++i)
+	for (int i = 1; i < subsequence_length; ++i)
 	{
-		fread(&current_number, sizeof(int), 1, file);
+		current_number = getNumber(file, i);
 
 		if (current_number != previous_number)
 		{
@@ -30,26 +24,19 @@ int calculateUniqueNumbersCount(FILE* file)
 		previous_number = current_number;
 	}
 
-	fseek(file, 0, SEEK_SET);
-
 	return unique_numbers_count;
 }
 
 
 void task2()
 {
-	srand(time(NULL));
+	FILE* my_file = openFile("w+b");
 
-	char* file_name = enterFileName();
-	printf("The name of your file is %s.\n\n", file_name);
-
-	FILE* my_file = openFile(file_name, "w+b");
-
-	fillFileRandomly(my_file);
+	celectMethodOfFillingFile(my_file);
 
 	sortFile(my_file);
 
-	puts("Numbers of your subsequence are:");
+	puts("Numbers of subsequence in your file are:");
 	printFile(my_file);
 
 	printf("\nThere are %d unique numbers in your subsequence.\n", calculateUniqueNumbersCount(my_file));

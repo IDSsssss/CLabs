@@ -1,10 +1,6 @@
 /*Выполнить реверс элементов в файле.*/
 
 #include "../binaryFiles/binaryFiles.h"
-#include "../inputManager/getInt.h"
-#include "../memoryAllocation/memoryAllocation.h"
-
-#include <time.h>
 
 
 void reverseFile(FILE* file)
@@ -20,21 +16,16 @@ void reverseFile(FILE* file)
 
 void task4()
 {
-	srand(time(NULL));
+	FILE* my_file = openFile("w+b");
 
-	char* file_name = enterFileName();
-	printf("The name of your file is %s.\n\n", file_name);
+	celectMethodOfFillingFile(my_file);
 
-	FILE* my_file = openFile(file_name, "w+b");
-
-	fillFileRandomly(my_file);
-
-	puts("The numbers in the file are:");
+	puts("The numbers in your file are:");
 	printFile(my_file);
 
 	reverseFile(my_file);
 
-	puts("The numbers in the reversed file are:");
+	puts("The numbers in reversed file are:");
 	printFile(my_file);
 
 	fclose(my_file);
