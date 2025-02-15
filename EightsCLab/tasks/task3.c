@@ -8,17 +8,17 @@
 
 void task3()
 {
-	FILE* my_file = openFile("r+b");
+	FileDescriptor* file_descriptor = createFileDescriptor("r+b");
 
 	puts("The numbers in your file are:");
-	printFile(my_file);
+	printFile(file_descriptor);
 
-	sortFile(my_file);
+	sortFile(file_descriptor);
 
-	insertNumbersInDescendingOrder(my_file);
+	insertNumbersInDescendingOrder(file_descriptor);
 
 	puts("The numbers in supplemented file are:");
-	printFile(my_file);
+	printFile(file_descriptor);
 
-	fclose(my_file);
+	closeFile(file_descriptor);
 }

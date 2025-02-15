@@ -4,7 +4,11 @@
 #include <stdio.h>
 
 
-FILE* openFile(const char* mode);
+typedef struct
+{
+	FILE* file;
+	int file_length;
+}FileDescriptor;
 
 void safeFseek(FILE* file, long offset, int origin);
 
@@ -14,23 +18,27 @@ void safeFwrite(const void* str, size_t elementSize, size_t count, FILE* file);
 
 long safeFtell(FILE* file);
 
-int calculateFileLength(FILE* file);
+FILE* openFile(const char* mode);
+
+FileDescriptor* createFileDescriptor(const char* mode);
 
 int getNumber(FILE* file, int index);
 
 void insertNumber(FILE* file, int number, int index);
 
-void insertNumbersInDescendingOrder(FILE* file);
+void insertNumbersInDescendingOrder(FileDescriptor* file_descriptor);
 
 void swapNumbers(FILE* file, int first_index, int second_index);
 
-void fillFileRandomly(FILE* file);
+void fillFileRandomly(FileDescriptor* file_descriptor);
 
-void fillFileManually(FILE* file);
+void fillFileManually(FileDescriptor* file_descriptor);
 
-void celectMethodOfFillingFile(FILE* file);
+void celectMethodOfFillingFile(FileDescriptor* file_descriptor);
 
-void printFile(FILE* file);
+void printFile(const FileDescriptor* file_descriptor);
+
+void closeFile(FileDescriptor* file_descriptor);
 
 
 #endif

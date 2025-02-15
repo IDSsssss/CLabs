@@ -6,15 +6,13 @@
 #include "../sorting/sorting.h"
 
 
-int calculateUniqueNumbersCount(FILE* file)
+int calculateUniqueNumbersCount(const FileDescriptor* file_descriptor)
 {
-	const int subsequence_length = calculateFileLength(file);
+	int current_number = 0, previous_number = getNumber(file_descriptor -> file, 0), unique_numbers_count = 1;
 
-	int current_number = 0, previous_number = getNumber(file, 0), unique_numbers_count = 1;
-
-	for (int i = 1; i < subsequence_length; ++i)
+	for (int i = 1; i < file_descriptor -> file_length; ++i)
 	{
-		current_number = getNumber(file, i);
+		current_number = getNumber(file_descriptor -> file, i);
 
 		if (current_number != previous_number)
 		{
@@ -30,16 +28,16 @@ int calculateUniqueNumbersCount(FILE* file)
 
 void task2()
 {
-	FILE* my_file = openFile("w+b");
+	FileDescriptor* file_descriptor = createFileDescriptor("w+b");
 
-	celectMethodOfFillingFile(my_file);
+	celectMethodOfFillingFile(file_descriptor);
 
-	sortFile(my_file);
+	sortFile(file_descriptor);
 
 	puts("Numbers of subsequence in your file are:");
-	printFile(my_file);
+	printFile(file_descriptor);
 
-	printf("\nThere are %d unique numbers in your subsequence.\n", calculateUniqueNumbersCount(my_file));
+	printf("\nThere are %d unique numbers in your subsequence.\n", calculateUniqueNumbersCount(file_descriptor));
 
-	fclose(my_file);
+	closeFile(file_descriptor);
 }

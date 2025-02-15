@@ -4,7 +4,7 @@
 #include <stdio.h>
 
 
-void sortFile(FILE* file);
+void sortFile(const FileDescriptor* file_descriptor);
 
 
 #endif

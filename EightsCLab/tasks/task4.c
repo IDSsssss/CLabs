@@ -3,30 +3,28 @@
 #include "../binaryFiles/binaryFiles.h"
 
 
-void reverseFile(FILE* file)
+void reverseFile(const FileDescriptor* file_descriptor)
 {
-	const int file_length = calculateFileLength(file);
-
-	for (int i = 0, j = file_length - 1; i < j; ++i, --j)
+	for (int i = 0, j = file_descriptor -> file_length - 1; i < j; ++i, --j)
 	{
-		swapNumbers(file, i, j);
+		swapNumbers(file_descriptor -> file, i, j);
 	}
 }
 
 
 void task4()
 {
-	FILE* my_file = openFile("w+b");
+	FileDescriptor* file_descriptor = createFileDescriptor("w+b");
 
-	celectMethodOfFillingFile(my_file);
+	celectMethodOfFillingFile(file_descriptor);
 
 	puts("The numbers in your file are:");
-	printFile(my_file);
+	printFile(file_descriptor);
 
-	reverseFile(my_file);
+	reverseFile(file_descriptor);
 
 	puts("The numbers in reversed file are:");
-	printFile(my_file);
+	printFile(file_descriptor);
 
-	fclose(my_file);
+	closeFile(file_descriptor);
 }

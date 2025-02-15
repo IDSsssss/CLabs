@@ -33,7 +33,7 @@ static void sortFileByHoaresMethod(FILE* file, const int first_index, const int 
 }
 
 
-void sortFile(FILE* file)
+void sortFile(const FileDescriptor* file_descriptor)
 {
-	sortFileByHoaresMethod(file, 0, calculateFileLength(file) - 1);
+	sortFileByHoaresMethod(file_descriptor -> file, 0, file_descriptor -> file_length - 1);
 }

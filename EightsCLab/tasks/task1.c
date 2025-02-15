@@ -5,12 +5,12 @@
 
 void task1()
 {
-	FILE* my_file = openFile("w+b");
+	FileDescriptor* file_descriptor = createFileDescriptor("w+b");
 
-	fillFileManually(my_file);
+	fillFileManually(file_descriptor);
 
 	puts("The numbers in your file are:\n");
-	printFile(my_file);
+	printFile(file_descriptor);
 
-	fclose(my_file);
+	closeFile(file_descriptor);
 }
