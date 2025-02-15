@@ -122,9 +122,9 @@ FileDescriptor* createFileDescriptor(const char* mode)
 {
 	FileDescriptor* file_descriptor = safeMalloc(sizeof(FILE*) + sizeof(int));
 
-	file_descriptor->file = openFile(mode);
+	file_descriptor -> file = openFile(mode);
 
-	file_descriptor->file_length = calculateFileLength(file_descriptor->file);
+	file_descriptor -> file_length = calculateFileLength(file_descriptor -> file);
 
 	return file_descriptor;
 }
@@ -256,6 +256,6 @@ void printFile(const FileDescriptor* file_descriptor)
 
 void closeFile(FileDescriptor* file_descriptor)
 {
-	fclose(file_descriptor->file);
+	fclose(file_descriptor -> file);
 	free(file_descriptor);
 }
