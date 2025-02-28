@@ -1,0 +1,3 @@
+C:/Users/Иван/CLionProjects/NinthCLab/cmake-build-debug/CMakeFiles/NinthCLab.dir
+C:/Users/Иван/CLionProjects/NinthCLab/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Иван/CLionProjects/NinthCLab/cmake-build-debug/CMakeFiles/rebuild_cache.dir
