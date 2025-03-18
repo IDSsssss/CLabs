@@ -1,0 +1,4 @@
+/home/ivan/CLion/CLion-2024.3.3/clion-2024.3.3/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/ivan/CLion/CLion-2024.3.3/clion-2024.3.3/bin/ninja/linux/x64/ninja -G Ninja -S /home/ivan/CLionProjects/TenthCLab -B /home/ivan/CLionProjects/TenthCLab/cmake-build-debug
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/ivan/CLionProjects/TenthCLab/cmake-build-debug
