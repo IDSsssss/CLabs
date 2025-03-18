@@ -44,13 +44,3 @@ void* safeRealloc(void* current_ptr, const size_t new_size)
 
 	return new_ptr;
 }
-
-
-void copyMemory(void* dest, const void* src, size_t n)
-{
-    char* destBytes = (char*)dest;
-    const char* srcBytes = (const char*)src;
-
-    for (size_t i = 0; i < n; i++)
-        destBytes[i] = srcBytes[i];
-}
