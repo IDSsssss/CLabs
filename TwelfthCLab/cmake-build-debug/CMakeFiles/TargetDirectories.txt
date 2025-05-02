@@ -1,0 +1,3 @@
+/home/ivan/CLionProjects/TwelfthCLab/cmake-build-debug/CMakeFiles/TwelfthCLab.dir
+/home/ivan/CLionProjects/TwelfthCLab/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/ivan/CLionProjects/TwelfthCLab/cmake-build-debug/CMakeFiles/rebuild_cache.dir
